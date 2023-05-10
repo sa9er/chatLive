@@ -51,13 +51,7 @@ const Layout = async ({ children }: LayoutProps) => {
             `user:${session.user.id}:incoming_friend_requests`
         ) as User[]).length
 
-    const FriendReqs =
-        await fetchRedis(
-            'smembers',
-            `user:${session.user.id}:incoming_friend_requests`
-        ) as string[]
 
-    // console.log('friReqs', FriendReqs)
 
     return (
         <div className="w-full flex h-screen" >
@@ -97,7 +91,7 @@ const Layout = async ({ children }: LayoutProps) => {
                                     )
                                 })}
                                 <li>
-                                    <FriendRequestSidebareOption sessionId={session.user.id} initUnseenReqCount={unseenFriendReqs} FriendReqs={FriendReqs} />
+                                    <FriendRequestSidebareOption sessionId={session.user.id} initUnseenReqCount={unseenFriendReqs} />
                                 </li>
                             </ul>
                         </li>
