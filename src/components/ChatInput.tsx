@@ -22,6 +22,7 @@ const ChatInput: FC<ChatInputProps> = ({ chatPartner, chatId }) => {
     const textareaRef = useRef<HTMLTextAreaElement | null>(null)
 
     const sendMessage = async () => {
+        if (!input) return
         setIsLoading(true)
 
         try

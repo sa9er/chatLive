@@ -9,10 +9,9 @@ import { FC, useEffect, useState } from "react";
 interface FriendRequestSidebareOptionProps {
     sessionId: string
     initUnseenReqCount: number
-    FriendReqs: string[]
 }
 
-const FriendRequestSidebareOption: FC<FriendRequestSidebareOptionProps> = ({ initUnseenReqCount, sessionId, FriendReqs }) => {
+const FriendRequestSidebareOption: FC<FriendRequestSidebareOptionProps> = ({ initUnseenReqCount, sessionId }) => {
     const [unseenRequests, setUnseenRequests] = useState<number>(
         initUnseenReqCount
     )
@@ -26,7 +25,7 @@ const FriendRequestSidebareOption: FC<FriendRequestSidebareOptionProps> = ({ ini
 
         const friendRequestHandler = () => {
 
-            setUnseenRequests(FriendReqs.length)
+            setUnseenRequests((prev) => prev + 1)
         }
 
         pusherClient.bind('incoming_friend_requests', friendRequestHandler)

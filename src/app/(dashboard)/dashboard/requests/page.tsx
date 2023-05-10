@@ -27,7 +27,6 @@ const page = async () => {
             }
         })
     )
-    console.log(incomingSenderIds)
 
     return (
         <main className="pt-8 pl-4">

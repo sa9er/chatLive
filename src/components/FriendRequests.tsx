@@ -30,8 +30,7 @@ const FriendsRequests: FC<FriendsRequestsProps> = ({ incomingFriendRequests, ses
 
 
         const friendRequestHandler = ({ senderId, senderEmail }: IncomingFriendRequests) => {
-            // setFriendRequests((prev) => [...prev, { senderId, senderEmail }])
-            console.log('new friend req')
+            setFriendRequests((prev) => [...prev, { senderId, senderEmail }])
         }
 
         pusherClient.bind('incoming_friend_requests', friendRequestHandler)
