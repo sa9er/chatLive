@@ -39,7 +39,7 @@ const Messages: FC<MessagesProps> = ({ initialMessages, sessionId, chatParnter, 
             pusherClient.unbind('incoming_message', messageHandler)
         }
 
-    }, [])
+    }, [chatId])
 
     const scrollDownRef = useRef<HTMLDivElement | null>(null)
 

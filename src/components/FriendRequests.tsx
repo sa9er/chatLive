@@ -41,7 +41,7 @@ const FriendsRequests: FC<FriendsRequestsProps> = ({ incomingFriendRequests, ses
             pusherClient.unbind('incoming_friend_request', friendRequestHandler)
         }
 
-    }, [])
+    }, [router, sessionId, incomingFriendRequests])
 
     const accpetFriend = async (senderId: string) => {
 
