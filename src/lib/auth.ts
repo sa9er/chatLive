@@ -6,8 +6,8 @@ import { fetchRedis } from "@/helper/redis";
 
 
 function getGoogleCredentials() {
-    const clientId = '677074399397-iudu4mmi4o6e2h77d8ghpoa47ueufdog.apps.googleusercontent.com'
-    const clientSecret = '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'
+    const clientId = ''
+    const clientSecret = ''
 
     if (!clientId || clientId.length === 0)
     {
